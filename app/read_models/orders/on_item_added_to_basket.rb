@@ -1,6 +1,8 @@
 module Orders
   class OnItemAddedToBasket
     def call(event)
+      Rails.logger.debug("OnItemAddedToBasket")
+      Rails.logger.debug("Event: #{event}")
       create_draft_order(event.data[:order_id])
       item = find(event.data[:order_id], event.data[:product_id]) ||
              create(event.data[:order_id], event.data[:product_id])

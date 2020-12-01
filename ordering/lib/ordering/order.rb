@@ -59,6 +59,9 @@ module Ordering
     end
 
     on ItemAddedToBasket do |event|
+      Rails.logger.debug("Aggregate: ItemAddedToBasket")
+      Rails.logger.debug("Event: #{event}")
+
       product_id = event.data[:product_id]
       order_line = find_order_line(product_id)
       unless order_line

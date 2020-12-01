@@ -12,10 +12,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'honeybadger', '~> 4.0'
-gem 'rails_event_store', '~> 1.1.1'
+gem 'rails_event_store', '~> 1.2.2'
 gem 'dry-struct'
 gem 'dry-types'
 gem 'skylight'
+gem 'pg'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -26,11 +27,6 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
 end
 
 group :test do
